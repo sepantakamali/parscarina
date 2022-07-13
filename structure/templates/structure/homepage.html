@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parscarina</title>
+    <link rel="stylesheet" href="{% static 'mainstyles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+    shrink-to-fit=no">
+  </head>
+
+  <body>
+
+    <div class="firstpage">
+      <nav>
+        <div class="Nav">
+          <ul>
+            <li><a style="font-size:25px;" href="{% url 'structure:homepage' %}"><b>Parscarina</b></a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#contacts">contacts</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="{% url 'structure:persian_homepage' %}">پارسی</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="logo">
+        <img src="{% static 'images/MainLogo.png' %}" alt="parscarina">
+      </div>
+
+      <div class="slides">
+        <!-- <img src="{% static 'images/takhtejamshid.jpg' %}" alt="takhtejamshid"> -->
+      </div>
+    </div>
+
+    <div class="introduction" id="about">
+      <h1>Parscarina</h1>
+      <h2>Genral Trading Company</h2>
+      <h2>Exclusive export agent of <a href="">Virman</a> products</h2>
+      <h2>Cargo of China to Iran and Dubai</h2>
+      <h2>Export Import</h2>
+    </div>
+
+    <div class="summary" id="contacts">
+      <h1>Stay in touch with us</h1>
+      <div class="row">
+        <div class="column">
+          <h2>Phones</h2>
+          <p>021-22735596</p>
+          <p>011-44555096</p>
+        </div>
+        <div class="column">
+          <h2>Emails</h2>
+          <p>info@parscarina.com</p>
+        </div>
+        <div class="column">
+          <h2>Fax</h2>
+          <p>021-22735596</p>
+        </div>
+        <div class="column">
+          <h2>Addresses</h2>
+          <p>kish island</p>
+        </div>
+      </div>
+      <div class="row">
+        <h2>Send us a message</h2>
+        <section>
+          <div class="mail">
+            <form class="contact-form" action="https://formsubmit.co/53adaca5a6f28968f98c4d458fa828d4" method="POST">
+              {% csrf_token %}
+              <!-- Honeypot -->
+              <input type="text" name="_honey" style="display: none;">
+
+              <!-- Disable Captcha -->
+              <input type="hidden" name="_captcha" value="false">
+
+              <div class="mail_form">
+                <label for="name">Name</label>
+                <input type="text" id="Name" name="name" required>
+              </div>
+              <div class="mail_form">
+                <label for="subject">Subject</label>
+                <input type="text" id="Subject" name="subject" required>
+              </div>
+              <div class="mail_form">
+                <label for="email">Email</label>
+                <input type="email" id="Email" name="email" required>
+              </div>
+              <div class="mail_form">
+                <label for="message">Message</label>
+                <textarea id="Message" name="message" cols="30" rows="10" required></textarea>
+              </div>
+              <button type="submit">Submit</button>
+              <!-- <script src="{% static 'mail_sender.js' %}"></script> -->
+            </form>
+            <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+<footer>
+  <p style="text-align: center;vertical-align: cener;">website design and maintenance by <a href="https://www.linkedin.com/in/sepanta-kamali-ab71691b6">sepanta kamali</a></p>
+</footer>
+</html>
+
+
